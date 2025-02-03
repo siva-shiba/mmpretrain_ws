@@ -14,11 +14,11 @@ RUN pip install openmim
 RUN mim install mmengine "mmcv>=2.0.0"
 
 # mmpretrain の依存パッケージをインストール
-COPY ./mmpretrain /ws/mmpretrain
-RUN pip install -r /ws/mmpretrain/requirements.txt
+COPY ./mmpretrain /opt/mmpretrain
+RUN pip install -r /opt/mmpretrain/requirements.txt
 
 # mmpretrain を editable インストール（ソースコードを直接マウントして使える）
-RUN pip install -e /ws/mmpretrain
+RUN pip install -e /opt/mmpretrain/
 
 # ユーザー指定
 ARG UID
